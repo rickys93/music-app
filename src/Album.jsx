@@ -1,7 +1,19 @@
 import "./Album.css"
+import { useState } from 'react'
 
 function Album(props) {
     const {title, year} = props
+    const [liked, setLiked] = useState(false)
+
+    function handleClick(e) {
+        if (liked) {
+            e.target.textContent = "Like"
+            setLiked(false)
+        } else {
+            e.target.textContent = "✔"
+            setLiked(true)
+        }
+    }
 
     return (
         <li className="album">
@@ -9,8 +21,10 @@ function Album(props) {
                 <div>{title}</div>
                 <div>{year}</div>
             </div>
-            <button>Like</button>
-
+            <button 
+                className="like-button"
+                onClick={handleClick}
+            >Like</button>
         </li>
     )
 }

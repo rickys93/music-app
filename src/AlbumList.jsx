@@ -12,7 +12,7 @@ function AlbumList() {
 
     return (
         <>
-            <h2>Album List</h2>
+            <h2 className="section-title">Album List</h2>
             <ul>
                 {albums.map(album => (
                     <Album title={album.title} year={album.year}/>
