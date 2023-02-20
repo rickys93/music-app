@@ -5,6 +5,7 @@ import "./index.css"
 import Header from './Header'
 import Bio from "./Bio"
 import AlbumList from "./AlbumList"
+import AlbumForm from "./AlbumForm"
 
 
 function App() {
@@ -15,7 +16,7 @@ function App() {
         <Header />
         <section className="main-section">
             <div className="section"><Bio /></div>
-            <div className="section"><AlbumList /></div>
+            <div className="section"><AlbumForm /><AlbumList /></div>
         </section>
     </>
   )
