@@ -4,6 +4,7 @@ import "./index.css"
 
 import Header from './Header'
 import Bio from "./Bio"
+import AlbumList from "./AlbumList"
 
 
 function App() {
@@ -13,8 +14,8 @@ function App() {
     <>
         <Header />
         <section className="main-section">
-            <div id="main-section1" className="section"><Bio /></div>
-            <div id="main-section2" className="section"></div>
+            <div className="section"><Bio /></div>
+            <div className="section"><AlbumList /></div>
         </section>
     </>
   )
