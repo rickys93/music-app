@@ -1,0 +1,10 @@
+.main-section {
+    display: flex;
+    height: calc(100vh - 50px);
+}
+
+.section {
+    width: 50vw;
+    height: 100%;
+    background-color: rgb(138, 255, 255);
+}
