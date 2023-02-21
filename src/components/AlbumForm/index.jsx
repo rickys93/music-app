@@ -1,5 +1,5 @@
-import "./AlbumForm.css"
-import Album from "./Album"
+import "./index.css"
+import Album from "../Album"
 import { useState } from 'react'
 
 

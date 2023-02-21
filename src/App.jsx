@@ -2,10 +2,7 @@ import { useState } from 'react'
 import "./App.css"
 import "./index.css"
 
-import Header from './Header'
-import Bio from "./Bio"
-import AlbumList from "./AlbumList"
-import AlbumForm from "./AlbumForm"
+import { Album, AlbumForm, AlbumList, Bio, Header } from './components/index'
 
 
 function App() {

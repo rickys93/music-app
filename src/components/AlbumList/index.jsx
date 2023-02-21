@@ -1,6 +1,6 @@
-import "./AlbumList.css"
+import "./index.css"
 
-import Album from "./Album"
+import Album from "../Album"
 
 function AlbumList() {
     const albums = [
