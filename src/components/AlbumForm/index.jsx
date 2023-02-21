@@ -3,7 +3,7 @@ import Album from "../Album"
 import { useState } from 'react'
 
 
-function AlbumForm() {
+function AlbumForm({albums, setAlbums}) {
     const [inputTitle, setInputTitle] = useState("")
     const [inputYear, setInputYear] = useState("")
 
@@ -17,6 +17,8 @@ function AlbumForm() {
 
     function addAlbum(e) {
         e.preventDefault()
+        const newAlbum = {title:inputTitle, year:inputYear}
+        setAlbums([...albums, newAlbum])
         
     }
 
