@@ -17,8 +17,6 @@ function AlbumForm() {
 
     function addAlbum(e) {
         e.preventDefault()
-
-        
         
     }
 
