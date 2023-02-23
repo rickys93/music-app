@@ -1,15 +1,13 @@
 import { useState, useEffect } from 'react'
 import { Routes, Route } from 'react-router-dom'
-import "./App.css"
+import styles from "./App.css"
 
 import getRandomColor from "./helpers/helperFunctions"
-import albumData from "./database/albums"
 import { NavBar } from './layout'
 import * as Pages from "./pages"
 
 
 function App() {
-    const [albums, setAlbums] = useState(albumData)
     const [count, setCount] = useState(0)
     const [backgroundImage, setBackgroundImage] = useState(getRandomBackground())
 
@@ -36,7 +34,7 @@ function App() {
 
     return (
     <>
-      <div className="App" style={backgroundImage}>
+      <div className='app' style={backgroundImage}>
         <NavBar />
         <div className='mainsection'>
             <Routes>
@@ -46,22 +44,6 @@ function App() {
             </Routes>
         </div>
       </div>
-       {/* <section className="main-section" }>
-        
-        <div className="section"><Bio /></div>
-            <div className="section">
-                <AlbumForm 
-                albums={albums} 
-                setAlbums={setAlbums} 
-                />
-                
-                <AlbumList 
-                albums={albums} 
-                setAlbums={setAlbums} 
-                />
-                
-                </div>
-            </section> */}
     </>
   )
 }

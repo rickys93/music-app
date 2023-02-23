@@ -1,9 +1,12 @@
-.App {
+.app {
     display: flex;
     height: calc(100vh);
 }
 
 .mainsection {
     position: absolute;
+    width: 100%;
     top: 50px;
+    display: flex;
+    justify-content: center;
 }
