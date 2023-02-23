@@ -1,20 +1,27 @@
 import { useState, useEffect } from 'react'
+import { Routes, Route } from 'react-router-dom'
 import "./App.css"
-import "./index.css"
 
 import getRandomColor from "./helpers/helperFunctions"
 import albumData from "./database/albums"
-import { AlbumForm, AlbumList, Bio, Header } from './components/index'
+import { NavBar } from './layout'
+import * as Pages from "./pages"
 
 
 function App() {
     const [albums, setAlbums] = useState(albumData)
     const [count, setCount] = useState(0)
-    const [bgColorArray, setBgColorArray] = useState(["#f6d365", "#fda085"])
+    const [backgroundImage, setBackgroundImage] = useState(getRandomBackground())
+
+    function getRandomBackground() {
+        return {
+            backgroundImage:`linear-gradient(120deg, ${getRandomColor()} 0%, ${getRandomColor()} 100%)`
+        }
+    }
 
     useEffect(() => {
 
-        setBgColorArray([getRandomColor(), getRandomColor()])
+        setBackgroundImage(getRandomBackground())
 
         const timer = setInterval(() => {
             setCount(prev => prev + 1)
@@ -29,22 +36,32 @@ function App() {
 
     return (
     <>
-        <Header />
-        <section className="main-section" style={{backgroundImage: `linear-gradient(120deg, ${bgColorArray[0]} 0%, ${bgColorArray[1]} 100%)`}}>
-            <div className="section"><Bio /></div>
+      <div className="App" style={backgroundImage}>
+        <NavBar />
+        <div className='mainsection'>
+            <Routes>
+                <Route path="/" element={<Pages.Home />} />
+                <Route path="/bio" element={<Pages.Bio />} />
+                <Route path="/albums" element={<Pages.Albums />} />
+            </Routes>
+        </div>
+      </div>
+       {/* <section className="main-section" }>
+        
+        <div className="section"><Bio /></div>
             <div className="section">
                 <AlbumForm 
-                    albums={albums} 
-                    setAlbums={setAlbums} 
-                    />
-              
-                <AlbumList 
-                    albums={albums} 
-                    setAlbums={setAlbums} 
+                albums={albums} 
+                setAlbums={setAlbums} 
                 />
-              
-            </div>
-        </section>
+                
+                <AlbumList 
+                albums={albums} 
+                setAlbums={setAlbums} 
+                />
+                
+                </div>
+            </section> */}
     </>
   )
 }

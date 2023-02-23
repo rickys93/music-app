@@ -1,0 +1,23 @@
+.navbar {
+    width: 100%;
+    height: 50px;
+    background-color: rgba(218, 171, 110, 0);
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: space-between;
+}
+
+.logo {
+    margin-left: 5px;
+    font-size: 40px;
+    font-weight: 600;
+    color: white;
+}
+
+.navlinks {
+    display: flex;
+    list-style: none;
+    flex-direction: row;
+}

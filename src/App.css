@@ -1,14 +1,9 @@
-.main-section {
+.App {
     display: flex;
-    height: calc(100vh - 50px);
-    background-image: linear-gradient(
-        120deg,
-        rgb(116, 59, 221) 0%,
-        rgb(100, 100, 100) 100%
-    );
+    height: calc(100vh);
 }
 
-.section {
-    width: 50vw;
-    height: 100%;
+.mainsection {
+    position: absolute;
+    top: 50px;
 }
